@@ -40,11 +40,11 @@
                         <button type="submit" class="btn btn-primary">POST</button>
                     </div>
                 </form>
-            </div>
-        </div>
+            </div><!-- col-12 -->
+        </div><!-- row mt-4 px-4 -->
     </div>
 
 
-</body>
+</body><!-- container-fulid -->
 
 </html>
