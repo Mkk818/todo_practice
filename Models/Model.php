@@ -41,6 +41,8 @@ class Model
 
         // 実行結果を取得
         $tasks = $stmt->fetchAll();
+        // fetch()→1行ずつ取得
+        // fetchAll()→全部返却
 
         // return === 関数の呼び出し元に、値を返す
         return $tasks;
@@ -49,9 +51,9 @@ class Model
     // * findById()を以下に追加する
 
 
-    
 
-    
+
+
     public function delete($data)
     {
         // 削除処理
