@@ -4,8 +4,13 @@
 
 
 // データの取得
+// task.phpはmodelクラスを継承したもの
+require_once('Models/task.php');
+require_once('function.php');
 
-
+$task = new Task();
+$tasks = $task->getAll();
+// var_dump($tasks);
 
 ?>
 <!DOCTYPE html>
@@ -37,7 +42,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" href="signinform.php">Sign in</a>
                         </li>
-                        <li class="nav-item">                            
+                        <li class="nav-item">
                             <a class="nav-link text-light" href="signout.php">Sign out</a>
                         </li>
                         <li class="nav-item">
@@ -53,13 +58,14 @@
         </div>
 
         <div class="row p-3">
+            <?php foreach ($tasks as $task) : ?>
             <div class="col-sm-6 col-md-4 col-lg-3 py-3 py-3">
                 <div class="card">
                     <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">ここにタイトル</h5>
+                        <h5 class="card-title"><?= h($task["title"]); ?></h5>
                         <p class="card-text">
-                            ここに詳細
+                            <?= h($task["contents"]); ?>
                         </p>
                         <div class="text-right d-flex justify-content-end">
                             <!-- * href内を変更する -->
@@ -73,6 +79,7 @@
                     </div>
                 </div>
             </div>
+            <?php endforeach; ?>
         </div>
     </div>
 
