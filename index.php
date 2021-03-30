@@ -82,8 +82,8 @@ require_once('function.php');
                                 <a href="edit.php" class="btn text-success">EDIT</a>
                                 <form action="delete.php" method="post">
                                     <!-- * valueの中にtaskのidが入るようにする -->
-                                    <input type="hidden" name="id" value="">
-                                    <button type="submit" class="btn text-danger">DELETE</button>
+                                    <!-- DELETEボタンと同じform内のinputタグのvalueの中に、そのタスクのidを入れる -->
+                                    <input type="hidden" name="id" value="<?= h($task['id']); ?>"> <button type="submit" class="btn text-danger">DELETE</button>
                                 </form>
                             </div>
                         </div>
