@@ -49,7 +49,21 @@ class Model
     }
 
     // * findById()を以下に追加する
+    public function findById($id)
+    {
+        // 準備
+        // ?の中に受け取った引数が入る
+        $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' WHERE id = ?');
 
+        // 実行
+        $stmt->execute([$id]);
+
+        $task = $stmt->fetchAll();
+
+        // 変数に代入したものを戻り値として返す
+        return $task;
+
+    }
 
 
 
