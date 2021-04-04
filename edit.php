@@ -9,7 +9,9 @@ $id = $_GET['id'];
 
 // 3. DBへのデータ保存
 // クリックしたidを元にDBから一致するものを取得して$taskの中に代入
-$task = (new Task())->findById($id);
+// $task = (new Task())->findById($id);
+$task = new Task();
+$task = $task->findById($id);
 
 ?>
 <!DOCTYPE html>

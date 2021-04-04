@@ -79,7 +79,7 @@ require_once('function.php');
                             </p>
                             <div class="text-right d-flex justify-content-end">
                                 <!-- * href内を変更する -->
-                                <a href="edit.php?id=<? h($task['id']); ?>" class="btn text-success">EDIT</a>
+                                <a href="edit.php?id=<?php echo h($task['id']); ?>" class="btn text-success">EDIT</a>
                                 <form action="delete.php" method="post">
                                     <!-- * valueの中にtaskのidが入るようにする -->
                                     <!-- DELETEボタンと同じform内のinputタグのvalueの中に、そのタスクのidを入れる -->

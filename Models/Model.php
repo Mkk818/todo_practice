@@ -53,12 +53,12 @@ class Model
     {
         // 準備
         // ?の中に受け取った引数が入る
-        $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' WHERE id = ?');
+        $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' .$this->table . ' WHERE id = ?');
 
         // 実行
         $stmt->execute([$id]);
 
-        $task = $stmt->fetchAll();
+        $task = $stmt->fetch();
 
         // 変数に代入したものを戻り値として返す
         return $task;
