@@ -1,13 +1,17 @@
 <?php
 // * 下記を追加
 // 1. ファイルの読み込み
-
+require_once('Models/Task.php');
+require_once('function.php');
 
 // 2. データの受け取り
-
+$id = $_GET['id'];
 
 // 3. DBへのデータ保存
-
+// クリックしたidを元にDBから一致するものを取得して$taskの中に代入
+// $task = (new Task())->findById($id);
+$task = new Task();
+$task = $task->findById($id);
 
 ?>
 <!DOCTYPE html>
